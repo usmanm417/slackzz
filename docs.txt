@@ -1,2 +1,36 @@
+Steps to create a new project
+
+1. Download nessesary tools
+    a. bun (npm substitute) - do this at bun.sh
+        1. go to installation on bun.sh and follow the documentation to download it 
+    b. go to installation section on ui.shadcn.com and download it with Next.js (but use bun instead of npm)
+            a. make sure to write the name of your application in your command line
+        2. navigate into the directory created from that command
+            open project in vscode
+        3. run the command "bun run dev" to start the server
+        4. continue with the documentation on ui.shadcn.com to create your project
+            a. change the title in the layout.tsx file
+    c. go to supabase.com and start a project and open your dashboard
+        1. setup the project, once it is done then get the project API Keys
+            a. save the anon public key and the secret key
+        2. Then go to the authentication tab on the left
+            a. go to providers and enable what you want - good ones are github, google, and email
+                1. to enable github, you need a client id and a client secret
+                    a. go to your github profile and go to settings. Then go to developer settings and create a new OAuth app
+                        1. set the homepage url to your project url (get this from supabase - should be localhost:3000 or somethig like that)
+                        2. set the authorization callback url to your project url/api/auth/callback/github
+                        3. save the client id and client secret
+                        4. register the application and then fill in the info on supabase
+                2. to eable google, you need a client id and a client secret
+                    a. go to the google cloud console and create a new project
+                        1. go to APIs and Services and then go to the OAuth consent screen (select external), and then create and fill in email stuff
+                        2. go to credentials and create a new OAuth client id
+                            a. set the redirect uri to your project from supabase (get link in supabase)
+                            b. save the client id and client secret
+                            c. fill in the info on supabase
+        3. go to supabase documentation and follow documentation on https://supabase.com/docs/guides/auth/server-side/creating-a-client
+            a. to get info for the .env file, go to project settings in supabase, then fo to API under the configuration tab
+        4. start building out the login page in auth.tsx
+
 SUPABASE SSR
 https://supabase.com/docs/guides/auth/server-side/creating-a-client
